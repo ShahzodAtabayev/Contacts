@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="uz.xsoft.restapi.viewModels.home.ProfileViewModel" />
+
+        <variable
+            name="profileData"
+            type="uz.xsoft.restapi.data.models.RegisterData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragments.home.ProfileFragment">
+
+        <TextView
+            android:id="@+id/firstNameProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            android:ellipsize="end"
+            android:maxLength="20"
+            android:maxLines="2"
+            android:text="@{profileData.firstName}"
+            android:textColor="#000"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/lastNameProfile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Shahzodbek" />
+
+        <TextView
+            android:id="@+id/lastNameProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="12dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="@{profileData.lastName}"
+            android:textColor="#000"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/firstNameProfile"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Atabayev" />
+
+        <TextView
+            android:id="@+id/phoneProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@{profileData.phoneNumber}"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/firstNameProfile"
+            app:layout_constraintTop_toBottomOf="@id/firstNameProfile"
+            tools:text="+998919993949" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#16000000"
+            app:layout_constraintBottom_toTopOf="@id/btEditProfile" />
+
+        <TextView
+            android:id="@+id/btEditProfile"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="22dp"
+            android:drawablePadding="32dp"
+            android:gravity="center|start"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:selectableItemBackground"
+            android:onClick="@{()->viewModel.btEditProfile()}"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/edit_profile"
+            android:textColor="#000"
+            android:textSize="20sp"
+            app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_ios"
+            app:drawableStartCompat="@drawable/ic_profile_edit"
+            app:layout_constraintTop_toBottomOf="@+id/phoneProfile" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#16000000"
+            app:layout_constraintTop_toBottomOf="@id/btEditProfile" />
+
+        <TextView
+            android:id="@+id/btSettingsProfile"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:drawablePadding="32dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:selectableItemBackground"
+            android:gravity="center|start"
+            android:textStyle="bold"
+            android:onClick="@{()->viewModel.btSettings()}"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/settings"
+            android:textColor="#000"
+            android:textSize="20sp"
+            app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_ios"
+            app:drawableStartCompat="@drawable/ic_profile_settings"
+            app:layout_constraintTop_toBottomOf="@+id/btEditProfile" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#16000000"
+            app:layout_constraintTop_toBottomOf="@id/btSettingsProfile" />
+
+        <TextView
+            android:id="@+id/btContactsProfile"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:drawablePadding="32dp"
+            android:gravity="center|start"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:selectableItemBackground"
+            android:onClick="@{()->viewModel.btContacts()}"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/contacts"
+            android:textColor="#000"
+            android:textSize="20sp"
+            app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_ios"
+            app:drawableStartCompat="@drawable/ic_profile_contacts"
+            app:layout_constraintTop_toBottomOf="@+id/btSettingsProfile" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#16000000"
+            app:layout_constraintTop_toBottomOf="@id/btContactsProfile" />
+
+        <TextView
+            android:id="@+id/btExitProfile"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginBottom="24dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?android:selectableItemBackground"
+            android:drawablePadding="32dp"
+            android:gravity="center|start"
+            android:onClick="@{()->viewModel.btLogOut()}"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:text="@string/exit"
+            android:textColor="@color/colorRegBtBg_"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:drawableEndCompat="@drawable/ic_baseline_arrow_forward_ios"
+            app:drawableStartCompat="@drawable/ic_settings_exit"
+            app:layout_constraintTop_toBottomOf="@id/btContactsProfile" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#16000000"
+            app:layout_constraintBottom_toBottomOf="@id/btExitProfile" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

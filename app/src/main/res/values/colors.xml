@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F58B19</color>
+    <color name="colorPrimaryDark">#D16E03</color>
+    <color name="colorAccent">#F58B19</color>
+    <color name="colorRegBtBg">#FFFFFF</color>
+    <color name="colorNewsItemText">#000</color>
+    <color name="colorDiscountAllText">#F58B19</color>
+    <color name="colorHomeText">#000000</color>
+    <color name="colorPopularText">#000000</color>
+    <color name="colorEditTextStrokeTrue">#F58B19</color>
+    <color name="colorEditTextStrokeFalse">#F4F4F4</color>
+    <color name="colorRegBtBg_">#F58B19</color>
+    <color name="colorBottomNavigationIconTrue">#F58B19</color>
+    <color name="colorBottomNavigationIconFalse">#000000</color>
+    <color name="colorRegBtBg__">#B2F58B19</color>
+    <color name="colorRegBtBgAll">#E4E2E2</color>
+    <color name="colorBtSignUp">#F58B19</color>
+    <color name="colorBtSignIn">#000000</color>
+    <color name="colorBtSignUpText">#FFFFFF</color>
+    <color name="colorToolbarBackground">#FFFFFF</color>
+</resources>
